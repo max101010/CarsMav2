@@ -1,0 +1,3 @@
+Bus{model = IVEKO, colour = GREEN, speed = 170, price = 180000}
+Car{model = VOLVO, colour = BLACK, speed = 270, price = 160000}
+Truck{model = BELAZ, colour = WHITE, speed = 70, price = 370000}
