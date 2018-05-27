@@ -1,7 +1,9 @@
 package properties;
 
+/**
+ * This class stores the types of colours.
+ */
 public enum Colours {
-/* Перечисление возможных цветов автомобиля */
 
     WHITE,
     BLACK,
@@ -9,4 +11,5 @@ public enum Colours {
     YELLOW,
     ORANGE,
     BLUE
+
 }

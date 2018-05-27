@@ -3,31 +3,47 @@ package director;
 import builders.Builder;
 import properties.Colours;
 
+/**
+ * This class manages the creation of a car.
+ */
 public class Director {
-    /* класс Director управляет созданием автомобиля,
-    т.е. что и в какой последовательности создававать*/
 
-    //метод конструирует машину Truk
+    /**
+     * This method constructs the truck.
+     * @param builder object of the interface builder
+     */
     public void constructTruck(Builder builder) {
+        final int price = 50000;
+        final int speed = 130;
         builder.setModel("MAZ");
         builder.setColour(Colours.WHITE);
-        builder.setPrice(50000);
-        builder.setSpeed(130);
+        builder.setPrice(price);
+        builder.setSpeed(speed);
     }
 
-    //метод конструирует машину Bus
+    /**
+     * This method constructs the bus.
+     * @param builder object of the interface builder
+     */
     public void constructBus(Builder builder) {
+        final int price = 130000;
+        final int speed = 150;
         builder.setModel("MAN");
         builder.setColour(Colours.BLACK);
-        builder.setPrice(130000);
-        builder.setSpeed(150);
+        builder.setPrice(price);
+        builder.setSpeed(speed);
     }
 
-    //метод конструирует машину Car
+    /**
+     * This method constructs the car.
+     * @param builder object of the interface builder
+     */
     public void constructCar(Builder builder) {
+        final int price = 200000;
+        final int speed = 270;
         builder.setModel("BMW");
         builder.setColour(Colours.GREEN);
-        builder.setPrice(200000);
-        builder.setSpeed(270);
+        builder.setPrice(price);
+        builder.setSpeed(speed);
     }
 }

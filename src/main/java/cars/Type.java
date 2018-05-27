@@ -1,11 +1,13 @@
 package cars;
 
 /**
- * @author Maksim Mikhailau
- * @version 1.0
+ * This class stores the types of cars.
  */
 public enum Type {
+
+    //types of cars
     Bus,
     Truck,
     Auto
+
 }

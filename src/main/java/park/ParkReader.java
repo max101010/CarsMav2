@@ -1,24 +1,27 @@
 package park;
 
-import org.apache.commons.collections4.CollectionUtils;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class ParkReader {
-/*
-класс ParkReader - класс, задача которого
-работа с текстовым документо, т.е. считывание списка машин,
-вывод на консоль списка
+/**
+ * This class contains a list of cars and methods for working with it.
+ * the list is filled with input-output streams
+ * all methods are static
  */
+public class ParkReader {
 
+    /**
+     * This is list of all the cars.
+     */
     private static List<String> listreader = new ArrayList<String>();
     private static File file = new File("./src/Cars.txt");
 
-
-    //метод считывает список машин с текстового файла
+    /**
+     * This method reads text file and adds information to the list.
+     * @throws FileNotFoundException signals that an attempt to open the file has failed.
+     */
     public static void readList() throws FileNotFoundException {
 
         BufferedReader reader = new BufferedReader(new FileReader(file));
@@ -39,12 +42,19 @@ public class ParkReader {
         }
     }
 
-    //метод возвращает список машин, который считали
+    /**
+     * This method returns the list of cars.
+     * @return List<String> list of the cars
+     */
     public static List<String> getListReader() {
         return Collections.unmodifiableList(listreader);
     }
-    public static void showList(){
-        for (String cars : listreader){
+
+    /**
+     * This method prints the list of cars to the console.
+     */
+    public static void showList() {
+        for (String cars : listreader) {
             System.out.println(cars);
         }
     }

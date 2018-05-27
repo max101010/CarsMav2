@@ -3,73 +3,61 @@ import cars.Car;
 import cars.Type;
 import director.Director;
 import park.CarPark;
+import park.ParkReader;
+import java.io.FileNotFoundException;
 
 /**
- * This is a main class
+ * This is a main class.
  */
 public class Main {
 
     /**
-     * Program entry point
+     * Program entry point.
      * @param args command line args
      */
     public static void main(String[] args) {
 
-        //создаем директора
+        //create a director
         Director director = new Director();
+        //create a new instance of class CarPark
         CarPark carPark = new CarPark();
+        //create a new instance of class CarPark
         CarPark carPark1 = new CarPark();
 
-        //создаем строителей
+        //create builders
         CarBuilder builderTruck = new CarBuilder();
         CarBuilder builderBus = new CarBuilder();
         CarBuilder builderCar = new CarBuilder();
 
-        //выбираем, что будем конструировать
+        //choose what to design
         director.constructTruck(builderTruck);
         director.constructBus(builderBus);
         director.constructCar(builderCar);
 
-        //создаем экземпляр класса
-
+        //create a new car
         Car bus = builderBus.getResult(Type.Bus);
-        //  bus.addCar();
         Car auto = builderCar.getResult(Type.Auto);
-        // auto.addCar();
         Car truck = builderTruck.getResult(Type.Truck);
-        //truck.addCar();
 
+        //adds the new cars to the list of carPark
         carPark.addCar(bus);
         carPark.addCar(auto);
         carPark.addCar(truck);
 
+        //adds the new cars to the list of carPark1
         carPark1.addCar(bus);
         carPark1.printAll();
         carPark.printAll();
         carPark.maxPrice();
         carPark.maxSpeed();
-//      CarPark.removeCar(truck);
-//      CarPark.printAll();
 
-        //вывод на консоль автомобилей из текстового списка
-      /*  try {
-            ParkReader parkReader = new ParkReader();
-            ParkReader.readList();
-            for (String s : parkReader.getListReader()) {
-                System.out.println(s);
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        */
-      /*
+        //output the list of cars from the text file
         try {
             ParkReader.readList();
             ParkReader.showList();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        */
     }
 
 }
