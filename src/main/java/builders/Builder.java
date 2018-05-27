@@ -2,21 +2,33 @@ package builders;
 
 import properties.Colours;
 
-/**This interface contains methods for the class @see CarBuilder
- * @author Maksim Mikhailau
- * @version 1.0
+/**
+ * Builder interface for the class CarBuilder.
  */
 public interface Builder {
 
-    //метод создает цену машины
+    /**
+     * This method sets the price for the car.
+     * @param price car price
+     */
     void setPrice(int price);
 
-    //метод создает модель машины
+    /**
+     * This method sets the model for the car.
+     * @param model car model
+     */
     void setModel(String model);
 
-    //метод создает цвет машины
+    /**
+     * This method sets the colour for the car.
+     * @param colour car colour
+     */
     void setColour(Colours colour);
 
-    //метод создает скорость машины
+    /**
+     * This method sets speed for the car.
+     * @param speed car speed
+     */
     void setSpeed(int speed);
+
 }

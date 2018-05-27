@@ -3,12 +3,16 @@ import cars.Car;
 import cars.Type;
 import director.Director;
 import park.CarPark;
-import park.ParkReader;
-import java.io.FileNotFoundException;
 
+/**
+ * This is a main class
+ */
 public class Main {
 
-
+    /**
+     * Program entry point
+     * @param args command line args
+     */
     public static void main(String[] args) {
 
         //создаем директора

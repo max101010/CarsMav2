@@ -1,19 +1,17 @@
 package cars;
 
-import park.CarPark;
 import properties.Colours;
 
-
-public abstract class Car {
-/* Класс Car - базовый класс для всех видов автомобилей,
-реализован интерфейс Cars, создан базовый конструктор
+/*
+ * This is an abstract class that represents an algorithm for creating a car.
  */
+public abstract class Car {
 
     private int price;
     private String model;
     private Colours colour;
     private int speed;
-    private CarPark carPark;
+
     public Car(String model, Colours colour, int speed, int price) {
         this.model = model;
         this.colour = colour;
@@ -22,12 +20,12 @@ public abstract class Car {
     }
 
     //метод возвращает поле model
-    public String getModel() {
+    protected String getModel() {
         return model;
     }
 
     //метод возвращает поле colour
-    public Colours getColour() {
+     protected Colours getColour() {
         return colour;
     }
 
