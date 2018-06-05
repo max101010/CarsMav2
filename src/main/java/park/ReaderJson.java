@@ -36,6 +36,7 @@ public class ReaderJson {
 
     public static void printMap (){
         for (Map.Entry<String,JSONObject> item : carsMap.entrySet() ){
+
             System.out.println(item);
         }
     }
@@ -46,7 +47,7 @@ public class ReaderJson {
             JSONObject values = entry.getValue();
             String str = String.valueOf(values);
             if (key.equals("Bus")) {
-                System.out.println("create object Bus");
+                System.out.println("create new instance Bus");
                 int countOb = countFor(str);
                 for (int i = 0; i < countOb; i++) {
                     String nameOb = new BufferedReader(new InputStreamReader(System.in)).readLine();
@@ -83,11 +84,13 @@ public class ReaderJson {
                     }
         }
     }
+
 public static void printList(){
     for (Car car : carsList) {
         System.out.println(car);
     }
 }
+
 private static void switchColour() {
     String colour = (String) valuesObj.get("colour");
     switch (colour) {
@@ -115,6 +118,7 @@ private static void switchColour() {
 
     }
 }
+
     private static void setParam(){
         int speed = Integer.parseInt(String.valueOf(valuesObj.get("speed")));
         int price = Integer.parseInt(String.valueOf(valuesObj.get("price")));
@@ -123,14 +127,16 @@ private static void switchColour() {
     }
 
     private static int countFor(String str){
-        String[] words = str.toLowerCase().replaceAll("[-.?!)(,:]", " ").split("\\s");
+        String[] words = str.toLowerCase().replaceAll("[-.?!}{,:]", " ").split("\\s");
         int countOb = 0;
         for (String s : words) {
+            System.out.println(s);
             if (s.contains("model")) {
                 countOb++;
             }
         }
         return countOb;
     }
+
 }
 
