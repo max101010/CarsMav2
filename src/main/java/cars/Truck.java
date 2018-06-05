@@ -18,6 +18,9 @@ public class Truck extends Car {
         super(model, colour, speed, price);
     }
 
+    public Truck(){
+    }
+
     @Override
     public String toString() {
         return "cars.Truck{model = " + getModel() + ", colour = " + getColour()

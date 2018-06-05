@@ -4,7 +4,10 @@ import cars.Type;
 import director.Director;
 import park.CarPark;
 import park.ParkReader;
+import park.ReaderJson;
+
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 /**
  * This is a main class.
@@ -58,6 +61,15 @@ public class Main {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+        ReaderJson.readJson();
+        ReaderJson.printMap();
+        try {
+            ReaderJson.addNewObjects();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        ReaderJson.printList();
     }
+
 
 }

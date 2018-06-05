@@ -18,6 +18,9 @@ public class Bus extends Car {
         super(model, colour, speed, price);
     }
 
+   public Bus(){
+
+   }
     @Override
     public String toString() {
         return "cars.Bus{model = " + getModel() + ", colour = " + getColour()

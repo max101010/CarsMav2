@@ -18,6 +18,10 @@ public class Auto extends Car {
         super(model, colour, speed, price);
     }
 
+    public Auto(){
+
+    }
+
     @Override
     public String toString() {
         return "cars.Auto{model = " + getModel() + ", colour = " + getColour()

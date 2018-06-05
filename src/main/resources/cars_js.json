@@ -1,0 +1,36 @@
+{
+"Truck" :
+ {
+"obj_1" : 
+{
+"price" : "50000",
+"model" : "Kamaz",
+"colour" : "orange",
+"speed" : "120"
+},
+"obj_2":
+{
+"price" : "150000",
+"model" : "Belaz",
+"colour" : "white",
+"speed" : "70"
+}
+},
+"Bus" : 
+{
+"obj_1" : 
+{
+"price" : "70000",
+"model" : "MAN",
+"colour" : "green",
+"speed" : "125"
+},
+ "obj_2" :
+{
+"price" : "75000",
+"model" : "MAZ",
+"colour" : "yellow",
+"speed" : "130"
+}
+}
+}

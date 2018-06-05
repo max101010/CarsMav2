@@ -16,7 +16,7 @@ public class ParkReader {
      * This is list of all the cars.
      */
     private static List<String> listreader = new ArrayList<String>();
-    private static File file = new File("./src/Cars.txt");
+    private static File file = new File("./src/main/resources/Cars.txt");
 
     /**
      * This method reads text file and adds information to the list.

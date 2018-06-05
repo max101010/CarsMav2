@@ -26,7 +26,9 @@ public abstract class Car {
         this.speed = speed;
         this.price = price;
     }
+public Car(){
 
+}
     /**
      * This method returns the model of car.
      * @return model
@@ -69,4 +71,15 @@ public abstract class Car {
      */
     public abstract void beep();
 
+    public void setParameters (int price, String model, int speed){
+
+        this.price = price;
+        this.speed = speed;
+        this.model = model;
+
+
+    }
+    public void setColour(Colours colour) {
+        this.colour = colour;
+    }
 }

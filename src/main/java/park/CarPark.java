@@ -31,7 +31,7 @@ public class CarPark {
      * This method prints the list of cars to the console.
      */
     public void printAll() {
-        if (CollectionUtils.size(allcars) < 1) {
+        if (CollectionUtils.isEmpty(allcars)) {
             System.out.println("list is empty");
         } else {
             for (Car allcar : allcars) {
