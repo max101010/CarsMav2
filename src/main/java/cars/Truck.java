@@ -9,16 +9,20 @@ public class Truck extends Car {
 
     /**
      * This is constructor and it creates a new instance of class Truck.
-     * @param model model car
+     *
+     * @param model  model car
      * @param colour colour car
-     * @param speed speed car
-     * @param price price car
+     * @param speed  speed car
+     * @param price  price car
      */
     public Truck(String model, Colours colour, int speed, int price) {
         super(model, colour, speed, price);
     }
 
-    public Truck(){
+    /**
+     * Default constructor.
+     */
+    public Truck() {
     }
 
     @Override

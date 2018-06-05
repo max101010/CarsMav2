@@ -9,18 +9,23 @@ public class Bus extends Car {
 
     /**
      * This is constructor and it creates a new instance of class Bus.
-     * @param model model car
+     *
+     * @param model  model car
      * @param colour colour car
-     * @param speed speed car
-     * @param price price car
+     * @param speed  speed car
+     * @param price  price car
      */
     public Bus(String model, Colours colour, int speed, int price) {
         super(model, colour, speed, price);
     }
 
-   public Bus(){
+    /**
+     * Default constructor.
+     */
+    public Bus() {
 
-   }
+    }
+
     @Override
     public String toString() {
         return "cars.Bus{model = " + getModel() + ", colour = " + getColour()

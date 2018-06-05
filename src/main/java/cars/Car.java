@@ -15,10 +15,11 @@ public abstract class Car {
 
     /**
      * Constructor for the car.
-     * @param model model car
+     *
+     * @param model  model car
      * @param colour colour car
-     * @param speed speed car
-     * @param price price car
+     * @param speed  speed car
+     * @param price  price car
      */
     public Car(String model, Colours colour, int speed, int price) {
         this.model = model;
@@ -26,11 +27,17 @@ public abstract class Car {
         this.speed = speed;
         this.price = price;
     }
-public Car(){
 
-}
+    /**
+     * Default constructor.
+     */
+    public Car() {
+
+    }
+
     /**
      * This method returns the model of car.
+     *
      * @return model
      */
     protected String getModel() {
@@ -39,14 +46,16 @@ public Car(){
 
     /**
      * This method returns the colour of car.
+     *
      * @return colour
      */
-     protected Colours getColour() {
+    protected Colours getColour() {
         return colour;
     }
 
     /**
      * This method returns the speed of car.
+     *
      * @return colour
      */
     public int getSpeed() {
@@ -55,6 +64,7 @@ public Car(){
 
     /**
      * This method returns the price of car.
+     *
      * @return price
      */
     public int getPrice() {
@@ -71,14 +81,24 @@ public Car(){
      */
     public abstract void beep();
 
-    public void setParameters (int price, String model, int speed){
-
+    /**
+     * This is method for the class ReaderJson.
+     * It sets price, model, speed
+     * @param price price car
+     * @param model model car
+     * @param speed speed car
+     */
+    public void setParameters(int price, String model, int speed) {
         this.price = price;
         this.speed = speed;
         this.model = model;
-
-
     }
+
+    /**
+     * This is method for the class ReaderJson.
+     * it sets colour
+     * @param colour colour car
+     */
     public void setColour(Colours colour) {
         this.colour = colour;
     }

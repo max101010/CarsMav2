@@ -61,6 +61,8 @@ public class Main {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+
+        //reading json file
         ReaderJson.readJson();
         ReaderJson.printMap();
         try {
@@ -70,6 +72,5 @@ public class Main {
         }
         ReaderJson.printList();
     }
-
 
 }
