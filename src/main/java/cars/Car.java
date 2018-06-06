@@ -84,19 +84,37 @@ public abstract class Car {
     /**
      * This is method for the class ReaderJson.
      * It sets price, model, speed
+     *
      * @param price price car
      * @param model model car
      * @param speed speed car
      */
     public void setParameters(int price, String model, int speed) {
-        this.price = price;
-        this.speed = speed;
-        this.model = model;
+        final int minPrice = 1000;
+        final int maxPrice = 500000;
+        final int minSpeed = 30;
+        final int maxSpeed = 600;
+        if (price < minPrice || price > maxPrice) {
+            throw new IllegalArgumentException("price isn't correct");
+        } else {
+            this.price = price;
+        }
+        if (speed < minSpeed || speed > maxSpeed) {
+            throw new IllegalArgumentException("speed is not correct");
+        } else {
+            this.speed = speed;
+        }
+        if (model.matches("[a-zA-Z]+")) { // only letters
+            this.model = model;
+        } else {
+            throw new IllegalArgumentException("model isn't correct");
+        }
     }
 
     /**
      * This is method for the class ReaderJson.
      * it sets colour
+     *
      * @param colour colour car
      */
     public void setColour(Colours colour) {

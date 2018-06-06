@@ -34,6 +34,7 @@ import java.util.Map;
     private ReaderJson() {
 
     }
+
     /**
      * This method reads json file.
      */
@@ -148,9 +149,7 @@ import java.util.Map;
                 carsList.get(count).setColour(Colours.BLUE);
                 break;
             default:
-                System.out.println("colour is false");
-                break;
-
+                throw new IllegalArgumentException ("colour isn't correct");
         }
     }
 

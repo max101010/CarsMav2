@@ -83,6 +83,8 @@ public class CarBuilder implements Builder {
             case Truck:
                 car = new Truck(model, colour, speed, price);
                 break;
+                default:
+                    throw new IllegalArgumentException("type isn't correct");
         }
         return car;
     }
