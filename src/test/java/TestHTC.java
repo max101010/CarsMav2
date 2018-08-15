@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
 
@@ -19,7 +20,7 @@ public class TestHTC {
         System.setProperty("webdriver.chrome.driver", "c:\\chromedriver.exe");
         System.setProperty("webdriver.gecko.driver", "c:\\geckodriver.exe");
         driver = new ChromeDriver();
-        // driver = new FirefoxDriver();
+       // driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         HTC htc = new HTC(driver);

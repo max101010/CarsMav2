@@ -133,6 +133,11 @@ public class HTC {
             }
         }
         LOG.info("choice of two phones");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         WebElement elementButton = driver.findElement(By.xpath(
                 "//a[@class='compare-button__sub compare-button__sub_main']"));
         LOG.debug("search compare button - {}", elementButton);
