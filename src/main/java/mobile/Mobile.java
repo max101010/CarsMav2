@@ -8,6 +8,7 @@
 
 package mobile;
 
+import executor.ReaderJson;
 import executor.UtilsElements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -18,6 +19,7 @@ import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 /**
  * This class for the Mobile page.
@@ -30,6 +32,7 @@ public class Mobile {
      * use slf4j
      */
     private static final Logger LOG = LoggerFactory.getLogger(Mobile.class);
+    private static Map<String,String> values = ReaderJson.getValue("TestMobile");
     /**
      * Create a new variable of interface WebDriver.
      */
@@ -54,13 +57,13 @@ public class Mobile {
      *
      * @return int - size of checkbox list
      */
-    public int clickPhone() {
+    public String clickPhone() {
         LOG.info("method start: clickPhone()");
         List<WebElement> checkboxes = driver.findElements(By.xpath(
                 "//div[@class='schema-product__group']/div/div/div/div/label/span/span"));
         LOG.debug("find checkboxes of phones - {}", checkboxes.toString());
         LOG.debug("return a size of list, size = {}", checkboxes.size());
-        return checkboxes.size();
+        return String.valueOf(checkboxes.size());
     }
 
     /**
@@ -82,11 +85,11 @@ public class Mobile {
      *
      * @return int - size of heading list
      */
-    public int getCountHeadings() {
+    public String getCountHeadings() {
         LOG.info("method start: getCountHeadings()");
         LOG.debug("getting size of heading list, size = {}",
                 findHeadings().size());
-        return findHeadings().size();
+        return String.valueOf(findHeadings().size());
     }
 
     /**
@@ -122,11 +125,11 @@ public class Mobile {
      *
      * @return int - the size of the description list
      */
-    public int getCountDescriptions() {
+    public String getCountDescriptions() {
         LOG.info("method start: getCountDescriptions()");
         LOG.debug("return a size of description list, size = ",
                 findDescriptions().size());
-        return findDescriptions().size();
+        return String.valueOf(findDescriptions().size());
     }
 
     /**
@@ -161,11 +164,11 @@ public class Mobile {
      *
      * @return int - the size of the description list
      */
-    public int getCountPrices() {
+    public String getCountPrices() {
         LOG.info("method start: getCountPrices()");
         LOG.debug("return size of a price list, size = {}",
                 findPrices().size());
-        return findPrices().size();
+        return String.valueOf(findPrices().size());
     }
 
     /**
@@ -175,17 +178,19 @@ public class Mobile {
      * @return boolean - true or false
      */
     public boolean isFormat() {
-        final int numFormatBeforeMin = 3;
-        final int numFormatBeforeMax = 4;
-        final int numFormatAfter = 2;
+        final int numFormatBeforeMin = Integer.parseInt(values.get("before_point"));
+        final int numFormatBeforeMax = Integer.parseInt(values.get("before_point_v2"));
+        final int numFormatAfter = Integer.parseInt(values.get("after_point"));
         LOG.info("method start: isFormat()");
         String[] prices = getMobilePrices();
+        System.out.println(Arrays.toString(prices));
         LOG.debug("create a new String[] and fill it with a method: getMobilePrices: {}", Arrays.toString(prices));
         for (String price : prices) {
             if (price == null) {
                 LOG.error("an element of array is equal to null");
                 continue;
             }
+            System.out.println(price);
             price = price.replaceAll(",", ".");
             LOG.debug("replace ',' in the array - {}", price);
             if (!UtilsElements.isNumeric(price)) {
@@ -194,11 +199,11 @@ public class Mobile {
             }
             String[] splitter = price.split("\\.");
             if (splitter[1].length() != numFormatAfter) {
-                LOG.error("the number of digits after the point is incorrect");
+                LOG.error("the number of digits after the point is incorrect, this price = {}", price);
                 return false;
             } else if (splitter[0].length() != numFormatBeforeMin
                     && splitter[0].length() != numFormatBeforeMax) {
-                LOG.error("the number of digits before the point is incorrect");
+                LOG.error("the number of digits before the point is incorrect, this price = {}", price);
                 return false;
             }
         }

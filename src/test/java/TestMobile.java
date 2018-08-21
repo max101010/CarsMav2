@@ -1,4 +1,5 @@
-import iphone.Iphone;
+import executor.ReaderJson;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import mobile.Mobile;
 import org.junit.After;
 import org.junit.Assert;
@@ -9,53 +10,47 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Collection;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public class TestMobile {
 
     private static final Logger log = LoggerFactory.getLogger(LoggerFactory.class);
+    private static Map<String,String> values = ReaderJson.getValue("TestMobile");
     private WebDriver driver;
 
     @Before
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "c:\\chromedriver.exe");
-        System.setProperty("webdriver.gecko.driver", "c:\\geckodriver.exe");
+//        WebDriverManager.firefoxdriver().setup();
+//        driver = new FirefoxDriver();
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        // driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.manage().window().maximize();
     }
 
     @Test
     public void testCountCheckboxes() {
-        final int countCheckboxes = 30;
         Mobile mobile = new Mobile(driver);
-        Assert.assertEquals(mobile.clickPhone(), countCheckboxes);
+        Assert.assertEquals(mobile.clickPhone(), values.get("countCheckboxes"));
     }
 
     @Test
     public void testCountTitles() {
-        final int countTitles = 30;
         Mobile mobile = new Mobile(driver);
-        Assert.assertEquals(mobile.getCountHeadings(), countTitles);
+        Assert.assertEquals(mobile.getCountHeadings(),values.get("countTitles"));
     }
 
     @Test
     public void testCountDescriptions() {
-        final int countDescriptions = 30;
         Mobile mobile = new Mobile(driver);
-        Assert.assertEquals(mobile.getCountDescriptions(), countDescriptions);
+        Assert.assertEquals(mobile.getCountDescriptions(), values.get("countDescriptions"));
     }
 
     @Test
     public void testCountPrices() {
-        final int countPrices = 30;
         Mobile mobile = new Mobile(driver);
-        Assert.assertEquals(mobile.getCountPrices(), countPrices);
+        Assert.assertEquals(mobile.getCountPrices(), values.get("countPrices"));
     }
 
     @Test

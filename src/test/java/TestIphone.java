@@ -1,4 +1,6 @@
 
+import executor.ReaderJson;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import iphone.Iphone;
 import org.junit.After;
 import org.junit.Assert;
@@ -14,31 +16,27 @@ import java.util.concurrent.TimeUnit;
 
 public class TestIphone {
     private static final Logger log = LoggerFactory.getLogger(LoggerFactory.class);
+    private static Map<String,String> values = ReaderJson.getValue("TestIphone");
     private WebDriver driver;
 
     @Before
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "c:\\chromedriver.exe");
-        System.setProperty("webdriver.gecko.driver", "c:\\geckodriver.exe");
+//        WebDriverManager.firefoxdriver().setup();
+//        driver = new FirefoxDriver();
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        // driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.manage().window().maximize();
     }
 
     @Test
     public void testHeading() {
-        Map<String, String> mapForCompare = new HashMap<String, String>();
-        mapForCompare.put("Ёмкость аккумулятора", "1 960 мА·ч");
-        mapForCompare.put("Время разговора", "14 часов");
-        mapForCompare.put("Время ожидания", "1 неделя, 3 суток");
-        mapForCompare.put("Тип аккумулятора", "Li-ion");
         Iphone iphone = new Iphone(driver);
         Set<String> keysForIphone = iphone.getMapForIphone().keySet();
-        Set<String> keysForCompare = mapForCompare.keySet();
+        Set<String> keysForCompare = values.keySet();
         keysForCompare.removeAll(keysForIphone);
         Collection<String> valuesForIphone = iphone.getMapForIphone().values();
-        Collection<String> valuesForCompare = mapForCompare.values();
+        Collection<String> valuesForCompare = values.values();
         keysForCompare.removeAll(keysForIphone);
         log.info("compare keys two maps, result = {}", keysForCompare.isEmpty());
         valuesForCompare.removeAll(valuesForIphone);
