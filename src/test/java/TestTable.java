@@ -1,5 +1,6 @@
 import custom_elements.TablePage;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -26,4 +27,10 @@ public class TestTable {
         assertEquals(17, tablePage.table.getTableSize());
 
     }
+
+    @After
+    public  void tearDown() {
+        driver.quit();
+    }
+
 }

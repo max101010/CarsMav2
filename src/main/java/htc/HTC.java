@@ -121,12 +121,14 @@ public class HTC {
             e.printStackTrace();
             LOG.error("InterruptedException - {}", e);
         }
+        final int limit = 10;
         while (count < 2) {
-            final int limit = 10;
             int num = (int) (Math.random() * limit);
+            LOG.debug("number - {}", num);
             if (listDescrString.get(num).
                     equals("Android") && getNumber != num) {
                 listCheckBox.get(num).click();
+                LOG.debug("click");
                 titlesForCompare.add(titlesString.get(num));
                 getNumber = num;
                 count++;
@@ -134,7 +136,7 @@ public class HTC {
         }
         LOG.info("choice of two phones");
         try {
-            Thread.sleep(3000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

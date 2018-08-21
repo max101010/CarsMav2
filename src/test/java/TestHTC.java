@@ -16,7 +16,6 @@ import java.util.concurrent.TimeUnit;
 public class TestHTC {
     private WebDriver driver;
 
-
     @Before
     public void setUp() {
 //        WebDriverManager.firefoxdriver().setup();
@@ -30,11 +29,12 @@ public class TestHTC {
     }
 
     @Test
-    public void testHeading() {
+    public void testHTC() {
         HtcCompare htcCompare = new HtcCompare(driver);
         boolean comparePhones = htcCompare.comparePhones();
         Assert.assertTrue(comparePhones);
     }
+
 
     @After
     public void tearDown() {

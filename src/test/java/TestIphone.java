@@ -30,7 +30,7 @@ public class TestIphone {
     }
 
     @Test
-    public void testHeading() {
+    public void testIphone() {
         Iphone iphone = new Iphone(driver);
         Set<String> keysForIphone = iphone.getMapForIphone().keySet();
         Set<String> keysForCompare = values.keySet();
