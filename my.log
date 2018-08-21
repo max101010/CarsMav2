@@ -1,16 +1,14 @@
-10:37:09,436  INFO WebDriverManager:680 - Latest version of chromedriver is 2.41
-10:37:09,437 TRACE WebDriverManager:496 - Candidate URLs: [https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip, https://chromedriver.storage.googleapis.com/2.41/chromedriver_mac64.zip, https://chromedriver.storage.googleapis.com/2.41/chromedriver_win32.zip]
-10:37:09,437 TRACE UrlFilter:48 - URLs before filtering by OS (WIN): [https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip, https://chromedriver.storage.googleapis.com/2.41/chromedriver_mac64.zip, https://chromedriver.storage.googleapis.com/2.41/chromedriver_win32.zip]
-10:37:09,437 TRACE UrlFilter:63 - URLs after filtering by OS (WIN): [https://chromedriver.storage.googleapis.com/2.41/chromedriver_win32.zip]
-10:37:09,438 TRACE UrlFilter:69 - URLs before filtering by architecture (64): [https://chromedriver.storage.googleapis.com/2.41/chromedriver_win32.zip]
-10:37:09,438 TRACE UrlFilter:87 - URLs after filtering by architecture (64): [https://chromedriver.storage.googleapis.com/2.41/chromedriver_win32.zip]
-10:37:09,438 TRACE Config:148 - Property key wdm.ignoreVersions not found, using default value
-10:37:09,438 TRACE Config:148 - Property key wdm.ignoreVersions not found, using default value
-10:37:09,438 TRACE UrlFilter:120 - URLs before filtering by ignored versions ([]): [https://chromedriver.storage.googleapis.com/2.41/chromedriver_win32.zip]
-10:37:09,439 TRACE UrlFilter:135 - URLs after filtering by ignored versions ([]): [https://chromedriver.storage.googleapis.com/2.41/chromedriver_win32.zip]
-10:37:09,439 TRACE Downloader:85 - getTarget 2.41 https://chromedriver.storage.googleapis.com/2.41/chromedriver_win32.zip
-10:37:09,439 TRACE Downloader:114 - Target path C:\Users\User/.m2/repository/webdriver
-10:37:09,440 TRACE WebDriverManager:374 - Pre-download. target=C:\Users\User/.m2/repository/webdriver/chromedriver\win32\2.41/chromedriver_win32.zip, version=2.41
-10:37:09,440 TRACE Downloader:106 - Target file for URL https://chromedriver.storage.googleapis.com/2.41/chromedriver_win32.zip version 2.41 = C:\Users\User/.m2/repository/webdriver/chromedriver\win32\2.41/chromedriver_win32.zip
-10:37:09,450  INFO Downloader:167 - Using binary driver previously downloaded
-10:37:09,451  INFO WebDriverManager:811 - Exporting webdriver.chrome.driver as C:\Users\User\.m2\repository\webdriver\chromedriver\win32\2.41\chromedriver.exe
+11:06:31,315 TRACE WebDriverManager:601 - Filter cache by 2.41 -- input list [C:\Users\User\.m2\repository\webdriver\chromedriver\win32\2.41\chromedriver.exe, C:\Users\User\.m2\repository\webdriver\geckodriver\win64\0.21.0\geckodriver.exe, C:\Users\User\.m2\repository\webdriver\MicrosoftWebDriver\6.17134\MicrosoftWebDriver.exe] -- output list [C:\Users\User\.m2\repository\webdriver\chromedriver\win32\2.41\chromedriver.exe] 
+11:06:31,316 DEBUG WebDriverManager:435 - Driver for chromedriver (latest version) found in cache C:\Users\User\.m2\repository\webdriver\chromedriver\win32\2.41\chromedriver.exe
+11:06:31,317  INFO WebDriverManager:811 - Exporting webdriver.chrome.driver as C:\Users\User\.m2\repository\webdriver\chromedriver\win32\2.41\chromedriver.exe
+11:06:37,646  INFO TvDiagonal:48 - view page - 'https://catalog.onliner.by/tv'
+11:06:39,869  INFO TvDiagonal:57 - method start: clickQuestion()
+11:06:39,869 DEBUG TvDiagonal:60 - find button 'mailButton' - By.xpath: //div[text()='Диагональ']/parent::div/parent::div/preceding-sibling::div
+11:06:41,590 DEBUG TvDiagonal:63 - create new instance JavascriptExecutor and scroll down
+11:06:41,590 DEBUG TvDiagonal:64 - click button 'mailButton'
+11:06:41,720  INFO TvDiagonal:115 - method start: getText()
+11:06:41,759 DEBUG TvDiagonal:118 - return text from web element
+11:06:41,777  INFO TvDiagonal:102 - method start: getFontForText()
+11:06:41,814 DEBUG TvDiagonal:105 - return css from web element - 700
+11:06:42,424 DEBUG PoolingHttpClientConnectionManager:408 - Connection manager is shutting down
+11:06:42,424 DEBUG DefaultManagedHttpClientConnection:79 - http-outgoing-6: Close connection
