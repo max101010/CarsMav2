@@ -1,0 +1,10 @@
+<story path="comparingIphoneDescriptions.story" title="">
+<meta>
+<property keyword="@" name="Iphone" value=""/>
+</meta>
+<scenario keyword="Scenario:" title="This test compare the infornation of the test case with Iphone descriptions on site">
+<step outcome="successful">Given I open a browser for Iphone</step>
+<step outcome="successful">When I scroll down this page</step>
+<step outcome="successful">Then Compare descriptions of Iphone</step>
+</scenario>
+</story>

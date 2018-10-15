@@ -1,0 +1,13 @@
+<story path="comparisonDescriptionsForTvOnTheSite.story" title="">
+<meta>
+<property keyword="@" name="Tv" value=""/>
+</meta>
+<scenario keyword="Scenario:" title="This test compares the description and headers with the text from the test case">
+<step outcome="successful">Given I open a browser for TV</step>
+<step outcome="successful">When I enter https://catalog.onliner.by/tv - page of Tv</step>
+<step outcome="successful">And I get heading texts</step>
+<step outcome="successful">And I get description texts</step>
+<step outcome="successful">Then Headers match</step>
+<step outcome="successful">Then Descriptions match</step>
+</scenario>
+</story>

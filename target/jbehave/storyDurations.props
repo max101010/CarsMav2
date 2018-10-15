@@ -1,0 +1,10 @@
+#org.jbehave.core.embedder.StoryManager
+#Tue Oct 16 02:24:38 MSK 2018
+verificationOfTheCustomViewsForTable.story=9000
+comparingIphoneDescriptions.story=12000
+comparisonDescriptionsForTvOnTheSite.story=20000
+threads=1
+total=99000
+threadAverage=99000
+comparingTwoHtcPhones.story=11000
+comparisonOfInformationFromTheTestCaseWithTextOnTheSiteForTabletPc.story=47000

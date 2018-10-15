@@ -1,0 +1,12 @@
+<story path="comparisonOfInformationFromTheTestCaseWithTextOnTheSiteForTabletPc.story" title="">
+<meta>
+<property keyword="@" name="TabletPC" value=""/>
+</meta>
+<scenario keyword="Scenario:" title="This test compares the information from the test case with the text on the site for tabletPC">
+<step outcome="successful">Given I open a browser for tabletPC tests</step>
+<step outcome="successful">When I select the companies on the left</step>
+<step outcome="successful">And I select the companies in the search</step>
+<step outcome="successful">Then Company verification on the left</step>
+<step outcome="successful">And Company verification in the search</step>
+</scenario>
+</story>

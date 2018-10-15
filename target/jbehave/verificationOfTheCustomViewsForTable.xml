@@ -1,0 +1,12 @@
+<story path="verificationOfTheCustomViewsForTable.story" title="">
+<meta>
+<property keyword="@" name="TestTable" value=""/>
+</meta>
+<scenario keyword="Scenario:" title="This test checks the work of custom web elements for a table">
+<step outcome="successful">Given I open a browser for table tests</step>
+<step outcome="successful">Given I enter https://www.myscore.com.ua/football/russia/premier-league/standings/ for the table test</step>
+<step outcome="successful">When I select a table</step>
+<step outcome="successful">Then The number of the first line is 1</step>
+<step outcome="successful">And The size of the table is 17</step>
+</scenario>
+</story>

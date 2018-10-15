@@ -1,0 +1,41 @@
+{
+  "TestTv": {
+    "description": [
+       "Размер диагонали экрана в дюймах.",
+      " Минимальный комфортный размер зависит от расстояния между",
+      " экраном и зрителем, поскольку необходимо, чтобы изображение",
+      " занимало определенный процент поля зрения."
+    ],
+    "heading": {
+      "text" : "Диагональ",
+      "heading_font" : "700",
+      "description_font" : "13px"
+    }
+  },
+  "TestIphone": {
+    "Ёмкость аккумулятора": "1 960 мА·ч",
+    "Время разговора": "14 часов",
+    "Время ожидания": "1 неделя, 3 суток",
+    "Тип аккумулятора": "Li-ion"
+  },
+  "TestMobile": {
+    "count_elements": {
+      "countCheckboxes": "30",
+      "countTitles": "30",
+      "countDescriptions": "30",
+      "countPrices": "30"
+    },
+    "number_format": {
+      "before_point": "3",
+      "before_point_v2": "4",
+      "after_point": "2"
+    }
+  },
+  "TestTabletPc": {
+    "producer_count":"10"
+  },
+  "TestHTC": {
+    "phone_count": "2"
+  }
+}
+

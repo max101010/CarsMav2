@@ -1,0 +1,10 @@
+<story path="comparingTwoHtcPhones.story" title="">
+<meta>
+<property keyword="@" name="HTC" value=""/>
+</meta>
+<scenario keyword="Scenario:" title="This test selects two any HTC phones and compares them on the next page">
+<step outcome="successful">Given I open a browser</step>
+<step outcome="successful">When I enter $url and select two HTC phones</step>
+<step outcome="successful">Then Descriptions of the same</step>
+</scenario>
+</story>
